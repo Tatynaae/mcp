@@ -2,3 +2,4 @@
 .env
 /.idea
 /.vscodenode_modules/
+/dist
