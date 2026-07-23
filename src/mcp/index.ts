@@ -49,12 +49,14 @@ server.registerTool("users_list",
     {
         title: "Get Users",
         description: "Get all users",
-        outputSchema: z.array(
-            z.object({
-                name: z.string(),
-                birthYear: z.string(),
-            })
-        )
+        outputSchema: {
+            elements: z.array(
+                z.object({
+                    name: z.string(),
+                    birthYear: z.number(),
+                })
+            )
+        }
     },
     async () => {
         let elements = await userService.getUsers();
